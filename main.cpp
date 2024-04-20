@@ -14,14 +14,14 @@ int main(){
     cout << "The map is too small. Please input again." << endl;
     cout << "How wide do you want your map to be?" << endl;
     cin >> width;
-    cout << "How wide do you want your map to be?" << endl;
+    cout << "How high do you want your map to be?" << endl;
     cin >> height;
     if (width >=  && height >= )
       break;
     else
       continue;
   }
-  map();
+  map(width, height);
   
   for (int i = 0; i < row + 2; i++)
     delete[] map[i];
