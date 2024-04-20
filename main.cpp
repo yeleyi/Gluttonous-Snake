@@ -29,6 +29,7 @@ int main(){
   map(width, height);
   int playerX = width/2;
   int playerY = height/2;
+  int beansCount = 0;
 
   initscr(); // 初始化 ncurses
   cbreak(); // 禁用行缓冲（让按键立即生效）
@@ -43,6 +44,13 @@ int main(){
 
     // 移动玩家
     movePlayer(width, height, playerX, playerY);
+
+    // 检查bean是否少于3个
+    if (beansCount < 3) {
+      generateBean(width, height, playerX, playerY, map);
+      beansCount++;
+    }
+    
     renderMap(); // 更新并重新渲染地图
   }
   
