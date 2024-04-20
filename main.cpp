@@ -22,6 +22,8 @@ int main(){
       continue;
   }
   map(width, height);
+  int playerX = width/2;
+  int playerY = height/2;
   
   for (int i = 0; i < row + 2; i++)
     delete[] map[i];
