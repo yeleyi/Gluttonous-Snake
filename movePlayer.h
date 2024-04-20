@@ -66,27 +66,34 @@ void movePlayer(int width, int height, int playerX, int playerY){
         else if (command == "s")
           playerY += 1;
       }
+    }
     // 检查是否撞墙
     else{
-      playerX += dx;
-      playerY += dy;
+      if (last command == "w")
+        playerY -= 1;
+      if (last command == "d")
+        playerX += 1;
+      if (last command == "s")
+        playerY += 1;
+      if (last command == "a")
+        playerX -= 1;
     }
-      if (map[playerY][playerX] == '#'){
-        // 撞墙，游戏结束
-          endwin();
-          std::cout << "Game Over!" << std::endl;
-          break;
-          exit(0);
-      }
-      if (map[playerY][playerX] == "P"){
-        cout << "Game Over!" << endl;
+    if (map[playerY][playerX] == '#'){
+      // 撞墙，游戏结束
+        endwin();
+        std::cout << "Game Over!" << std::endl;
         break;
+        exit(0);
+      }
+    if (map[playerY][playerX] == "P"){
+      cout << "Game Over!" << endl;
+      break;
       }
   // 更新地图
     map[playerY - dy][playerX - dx] = '.';
     map[playerY][playerX] = 'P';
     lastcommand = command;
+  }
 }
-    }
 
 #endif
