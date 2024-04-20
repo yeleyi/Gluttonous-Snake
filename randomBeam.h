@@ -11,19 +11,17 @@ int randomInt(int min, int max){
   return min + rand() % (max -min + 1);
 }
 // 随机在地图上生成豆子的函数
-void RandomBeam::generateBean() {
-    if (beansCount_ >= 3) {
-        return;
-    }
-
+void generateBean(int width, int height, int playerX, int playerY, char map[width][height]) {
     int beanX, beanY;
-    do {
-        beanX = randomInt(0, width_ - 1);
-        beanY = randomInt(0, height_ - 1);
-    } while (map_[beanX][beanY] != ' ' || isPlayerPosition(beanX, beanY));
 
-    map_[beanX][beanY] = 'B'; // Assuming 'B' represents a bean
-    ++beansCount_;
+    // 随机生成bean的位置
+    do {
+        beanX = randomInt(0, width - 1);
+        beanY = randomInt(0, height - 1);
+    } while (map[beanX][beanY] != ' ' || isPlayerPosition(playerX, playerY, beanX, beanY));
+
+    // 放置bean
+    map[beanX][beanY] = 'B'; // Assuming 'B' represents a bean
 }
 
 // 判断生成地点是否有Player
