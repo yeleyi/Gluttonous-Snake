@@ -2,7 +2,7 @@
 #define MAP_H
 #include <string>
 void map(){
-  int row, column;
+  int width, height;
   cout << "How many rows would you like?" << endl;
   cin >> row;
   cout << "How many columns would you like?" << endl;
