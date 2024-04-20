@@ -6,6 +6,7 @@
 #include "map.h"
 #include "movePlayer.h"
 #include "renderMap.h"
+#include "random Bean.h"
 using namespace std;
 
 int main(){
