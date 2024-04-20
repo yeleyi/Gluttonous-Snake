@@ -24,7 +24,7 @@ int main(){
   map(width, height);
   int playerX = width/2;
   int playerY = height/2;
-  
+  movePlayer(width, height, playerX, playerY);
   for (int i = 0; i < row + 2; i++)
     delete[] map[i];
   delete[] map;
