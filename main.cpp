@@ -2,6 +2,7 @@
 #include <string>
 #include <thread>
 #include <chrono>
+#include <ncurses.h>
 #include "map.h"
 #include "movePlayer.h"
 #include "renderMap.h"
@@ -27,6 +28,10 @@ int main(){
   map(width, height);
   int playerX = width/2;
   int playerY = height/2;
+
+  initscr(); // 初始化 ncurses
+  cbreak(); // 禁用行缓冲（让按键立即生效）
+  noecho(); // 关闭回显
 
   renderMap(); // 初始渲染地图
 
