@@ -4,6 +4,7 @@
 #include <chrono>
 #include "map.h"
 #include "movePlayer.h"
+#include "renderMap.h"
 using namespace std;
 
 int main(){
