@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "map.h"
+#include "movePlayer.h"
 using namespace std;
 
 int main(){
