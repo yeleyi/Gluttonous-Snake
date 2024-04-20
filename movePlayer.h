@@ -3,21 +3,21 @@
 #include "map.h"
 
 // 地图大小
-const int width;
-const int height;
+// const int width;
+// const int height;
 
 // 地图
-char map[height][width];
+// char map[height][width];
 
 // 玩家初始位置
-int playerX = width/2;
-int playerY = height/2;
+// int playerX = width/2;
+// int playerY = height/2;
 
 // 移动方向
 int dx=0;
 int dy=-1; //初始向上移动
 
-void movePlayer(){
+void movePlayer(int width, int height, int playerX, int playerY){
   //更新玩家位置
   playerX += dx;
   playerY += dy;
