@@ -1,6 +1,7 @@
 #ifndef MOVEPLAYER_H
 #define MOVEPLAYER_H
 #include "map.h"
+#include <ncurses.h>
 
 // 地图大小
 // const int width;
