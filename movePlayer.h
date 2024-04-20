@@ -23,18 +23,49 @@ int dy=-1; //初始向上移动
 
 void movePlayer(int width, int height, int playerX, int playerY){
   //更新玩家位置
-  string command;
+  string command, lastcommand;
   while true{
     if (cin >> command){
-      if (map[playerY][playerX] == '#')
-      if (command == "a" or command == "A")
-        playerY -= 1;
-      else if (command == "d" or command == "D")
-        playerY += 1;
-      else if (command == "w" or command == "W")
-        playerX -= 1;
-      else if (command == "s" or command == "S")
-        playerX += 1;
+      if (last command == "d"){
+        if (command == "a")
+          playerX += 1;
+        else if (command == "d")
+          playerX += 1;
+        else if (command == "w")
+          playerY -= 1;
+        else if (command == "s")
+          playerY += 1;
+      }
+      if (last command == "a"){
+        if (command == "a")
+          playerX -= 1;
+        else if (command == "d")
+          playerX -= 1;
+        else if (command == "w")
+          playerY -= 1;
+        else if (command == "s")
+          playerY += 1;
+      }
+      if (last command == "w"){
+        if (command == "a")
+          playerX -= 1;
+        else if (command == "d")
+          playerX += 1;
+        else if (command == "w")
+          playerY -= 1;
+        else if (command == "s")
+          playerY -= 1;
+      }
+      if (last command == "s"){
+        if (command == "a")
+          playerX -= 1;
+        else if (command == "d")
+          playerX += 1;
+        else if (command == "w")
+          playerY += 1;
+        else if (command == "s")
+          playerY += 1;
+      }
     // 检查是否撞墙
     else{
       playerX += dx;
@@ -54,6 +85,7 @@ void movePlayer(int width, int height, int playerX, int playerY){
   // 更新地图
     map[playerY - dy][playerX - dx] = '.';
     map[playerY][playerX] = 'P';
+    lastcommand = command;
 }
     }
 
