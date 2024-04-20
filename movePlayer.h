@@ -2,6 +2,7 @@
 #define MOVEPLAYER_H
 #include "map.h"
 #include <ncurses.h>
+#include <string>
 
 // 地图大小
 // const int width;
@@ -22,6 +23,15 @@ void movePlayer(int width, int height, int playerX, int playerY){
   //更新玩家位置
   playerX += dx;
   playerY += dy;
+  string command;
+  cin >> command;
+  while (cin >> command){
+    if (command == "a")
+      playerY -= 1;
+    else if (command == "d")
+      playerY += 1;
+  }
+  while ()
 
   // 检查是否撞墙
   if (map[playerY][playerX] == '#'){
