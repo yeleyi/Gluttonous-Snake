@@ -4,6 +4,8 @@
 #include <ncurses.h>
 #include <string>
 
+using namespace std;
+
 // 地图大小
 // const int width;
 // const int height;
@@ -30,16 +32,18 @@ void movePlayer(int width, int height, int playerX, int playerY){
       playerY -= 1;
     else if (command == "d")
       playerY += 1;
-  }
-  while ()
-
+    else if (command == "w")
+      playerX -= 1;
+    else if (command == "s")
+      playerX += 1;
   // 检查是否撞墙
-  if (map[playerY][playerX] == '#'){
+    if (map[playerY][playerX] == '#'){
       // 撞墙，游戏结束
-      endwin();
-      std::cout << "Game Over!" << std::endl;
-      exit(0);
-  }
+        break;
+        endwin();
+        std::cout << "Game Over!" << std::endl;
+        exit(0);
+    }
   // 更新地图
   map[playerY - dy][playerX - dx] = '.';
   map[playerY][playerX] = 'P';
