@@ -14,13 +14,13 @@ int main(){
   cin >> width;
   cout << "How high do you want your map to be?" << endl;
   cin >> height;
-  while (width <  || height < ){
+  while (width < 20 || height < 20){
     cout << "The map is too small. Please input again." << endl;
     cout << "How wide do you want your map to be?" << endl;
     cin >> width;
     cout << "How high do you want your map to be?" << endl;
     cin >> height;
-    if (width >=  && height >= )
+    if (width >= 20 && height >= 20)
       break;
     else
       continue;
