@@ -27,6 +27,7 @@ void movePlayer(int width, int height, const Player &P){
   string command, lastcommand;
   int round = 0;
   for (int i == 1; i < P.body.size(); i++){
+    player.body[];
     P.body[i] = P.body[i - 1];
   }
   while true{
