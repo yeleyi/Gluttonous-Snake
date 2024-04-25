@@ -7,6 +7,7 @@
 #include "movePlayer.h"
 #include "renderMap.h"
 #include "randomBean.h"
+#include "player.h"
 using namespace std;
 
 int main(){
@@ -26,9 +27,10 @@ int main(){
     else
       continue;
   }
+
+  Player P; //创建一个Player P
+  P.body.push_back(make_pair(width/2, height/2));
   map(width, height);
-  int playerX = width/2;
-  int playerY = height/2;
   int beansCount = 0;
 
   initscr(); // 初始化 ncurses
@@ -43,11 +45,11 @@ int main(){
     std::this_thread::sleep_for(std::chrono:milliseconds(200));
 
     // 移动玩家
-    movePlayer(width, height, playerX, playerY);
+    movePlayer(width, height, P);
 
     // 检查地图上是否有bean
     if (beansCount < 1) {
-      generateBean(width, height, playerX, playerY, map);
+      generateBean(width, height, P, map);
       beansCount++;
     }
     
