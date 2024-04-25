@@ -52,6 +52,9 @@ int main(){
       generateBean(width, height, P, map);
       beansCount++;
     }
+
+    // 检查是否碰撞B
+    if (P.body[0].first)
     
     renderMap(); // 更新并重新渲染地图
   }
