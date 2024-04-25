@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <ctime>
-#include "player.hpp"
+#include "player.h"
 
 // 随机生成数字的函数
 int randomInt(int min, int max);
