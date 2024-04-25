@@ -11,8 +11,7 @@ struct Player{
 };
 
 // 当玩家触碰豆子时调用，扩展玩家长度
-  void extendPlayerLength(Player &player) {
-    if 
+  void extendPlayerLength(Player &player) { 
     player.body.push_back(player.body.back());
   }
 
