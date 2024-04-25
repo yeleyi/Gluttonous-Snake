@@ -25,6 +25,9 @@ int dy=-1; //初始向上移动
 void movePlayer(int width, int height, const Player &P){
   //更新玩家位置
   string command, lastcommand;
+  for (int i == 1; i < P.body.size(); i++){
+    P.body[i] = P.body[i - 1];
+  }
   while true{
     if (cin >> command){
       if (last command == "d"){
@@ -79,14 +82,16 @@ void movePlayer(int width, int height, const Player &P){
       if (last command == "a")
         P.body[0].first -= 1;
     }
+    
     if (map[P.body[0].second][P.body[0].first] == '#'){
       // 撞墙，游戏结束
         endwin();
         std::cout << "Game Over!" << std::endl;
         break;
         exit(0);
-      }
+    }
     if (map[P.body[0].second][P.body[0].first] == "P"){
+      //撞到自身，游戏结束
       cout << "Game Over!" << endl;
       break;
       }
