@@ -1,4 +1,4 @@
-#include "map.hpp"
+#include "map.h"
 void mapf(int width, int height, std::string ** map){
   map = new std::string * [width + 2];
   for (int i = 0; i < width + 2; i++)
