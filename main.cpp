@@ -54,7 +54,10 @@ int main(){
     }
 
     // 检查是否碰撞B
-    if (P.body[0].first)
+    if (map[P.body[0].first][P.body[0].second] == 'B'){
+      beansCount--;
+      extendPlayerLength();
+    }
     
     renderMap(); // 更新并重新渲染地图
   }
