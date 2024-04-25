@@ -3,11 +3,11 @@
 #include <thread>
 #include <chrono>
 #include <ncurses.h>
-#include "map.hpp"
-#include "movePlayer.hpp"
-#include "renderMap.hpp"
-#include "randomBeam.hpp"
-#include "player.hpp"
+#include "map.h"
+#include "movePlayer.h"
+#include "renderMap.h"
+#include "randomBeam.h"
+#include "player.h"
 using namespace std;
 
 int main(){
