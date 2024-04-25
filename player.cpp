@@ -1,4 +1,4 @@
-#include "player.hpp"
+#include "player.h"
 
 void extendPlayerLength(Player &P) {
   P.body.push_back(P.body.back());
