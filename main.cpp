@@ -27,10 +27,10 @@ int main(){
     else
       continue;
   }
-
+  string ** map;
   Player P; //创建一个Player P
   P.body.push_back(make_pair(width/2, height/2));
-  mapf(width, height);
+  mapf(width, height, map);
   int beansCount = 0;
 
   initscr(); // 初始化 ncurses
