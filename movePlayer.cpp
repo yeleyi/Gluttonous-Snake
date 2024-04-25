@@ -6,7 +6,7 @@ void movePlayer(int width, int height, Player &P, std::string **map){
   string command, lastcommand;
   int round = 0;
   while (true){
-    if (cin >> command){
+    if (getch >> command){
       round = 1;
       if (lastcommand == "d"){
         if (command == "a")
