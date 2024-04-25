@@ -2,7 +2,7 @@
 #define MAP_H
 #include <string>
 //Initialized the map with "#" at the edge and "." in the middle
-void map(int width, int height){
+void mapf(int width, int height){
   string ** map = new string * [width + 2];
   for (int i = 0; i < width + 2; i++)
     map[i] = new string [height + 2];
