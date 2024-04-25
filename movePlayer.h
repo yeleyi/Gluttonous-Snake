@@ -1,7 +1,7 @@
 #ifndef MOVEPLAYER_H
 #define MOVEPLAYER_H
-#include "map.hpp"
-#include "player.hpp"
+#include "map.h"
+#include "player.h"
 #include <ncurses.h>
 #include <string>
 
