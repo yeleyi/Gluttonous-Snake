@@ -18,11 +18,7 @@ using namespace std;
 // int playerX = width/2;
 // int playerY = height/2;
 
-// 移动方向
-int dx=0;
-int dy=-1; //初始向上移动
-
-void movePlayer(int width, int height, const Player &P){
+void movePlayer(int width, int height, Player &P){
   //更新玩家位置
   string command, lastcommand;
   int round = 0;
