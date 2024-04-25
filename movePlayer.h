@@ -24,12 +24,12 @@ int dy=-1; //初始向上移动
 
 void movePlayer(int width, int height, const Player &P){
   //更新玩家位置
-  string command, last command;
+  string command, lastcommand;
   int round = 0;
   while true{
     if (cin >> command){
       round = 1;
-      if (last command == "d"){
+      if (lastcommand == "d"){
         if (command == "a")
           P.body[0].first += 1;
         else if (command == "d")
@@ -39,7 +39,7 @@ void movePlayer(int width, int height, const Player &P){
         else if (command == "s")
           P.body[0].second += 1;
       }
-      if (last command == "a"){
+      if (lastcommand == "a"){
         if (command == "a")
           P.body[0].first -= 1;
         else if (command == "d")
@@ -49,37 +49,37 @@ void movePlayer(int width, int height, const Player &P){
         else if (command == "s")
           P.body[0].second += 1;
       }
-      if (last command == "w"){
-        if (command == "a")
-          P.body[0].first -= 1;
-        else if (command == "d")
-          P.body[0].first += 1;
-        else if (command == "w")
-          P.body[0].second -= 1;
-        else if (command == "s")
-          P.body[0].second -= 1;
-      }
-      if (last command == "s"){
+      if (lastcommand == "w"){
         if (command == "a")
           P.body[0].first -= 1;
         else if (command == "d")
           P.body[0].first += 1;
         else if (command == "w")
+          P.body[0].second -= 1;
+        else if (command == "s")
+          P.body[0].second -= 1;
+      }
+      if (lastcommand == "s"){
+        if (command == "a")
+          P.body[0].first -= 1;
+        else if (command == "d")
+          P.body[0].first += 1;
+        else if (command == "w")
           P.body[0].second += 1;
         else if (command == "s")
           P.body[0].second += 1;
       }
-      last command = command;
+      lastcommand = command;
     }
     else{
       round = 0;
-      if (last command == "w")
+      if (lastcommand == "w")
         P.body[0].second -= 1;
-      if (last command == "d")
+      if (lastcommand == "d")
         P.body[0].first += 1;
-      if (last command == "s")
+      if (lastcommand == "s")
         P.body[0].second += 1;
-      if (last command == "a")
+      if (lastcommand == "a")
         P.body[0].first -= 1;
     }
     
