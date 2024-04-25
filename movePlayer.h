@@ -1,6 +1,7 @@
 #ifndef MOVEPLAYER_H
 #define MOVEPLAYER_H
 #include "map.h"
+#include "player.h"
 #include <ncurses.h>
 #include <string>
 
@@ -21,77 +22,77 @@ using namespace std;
 int dx=0;
 int dy=-1; //初始向上移动
 
-void movePlayer(int width, int height, int playerX, int playerY){
+void movePlayer(int width, int height, const Player &P){
   //更新玩家位置
   string command, lastcommand;
   while true{
     if (cin >> command){
       if (last command == "d"){
         if (command == "a")
-          playerX += 1;
+          P.body[0].first += 1;
         else if (command == "d")
-          playerX += 1;
+          P.body[0].first += 1;
         else if (command == "w")
-          playerY -= 1;
+          P.body[0].second -= 1;
         else if (command == "s")
-          playerY += 1;
+          P.body[0].second += 1;
       }
       if (last command == "a"){
         if (command == "a")
-          playerX -= 1;
+          P.body[0].first -= 1;
         else if (command == "d")
-          playerX -= 1;
+          P.body[0].first -= 1;
         else if (command == "w")
-          playerY -= 1;
+          P.body[0].second -= 1;
         else if (command == "s")
-          playerY += 1;
+          P.body[0].second += 1;
       }
       if (last command == "w"){
         if (command == "a")
-          playerX -= 1;
+          P.body[0].first -= 1;
         else if (command == "d")
-          playerX += 1;
+          P.body[0].first += 1;
         else if (command == "w")
-          playerY -= 1;
+          P.body[0].second -= 1;
         else if (command == "s")
-          playerY -= 1;
+          P.body[0].second -= 1;
       }
       if (last command == "s"){
         if (command == "a")
-          playerX -= 1;
+          P.body[0].first -= 1;
         else if (command == "d")
-          playerX += 1;
+          P.body[0].first += 1;
         else if (command == "w")
-          playerY += 1;
+          P.body[0].second += 1;
         else if (command == "s")
-          playerY += 1;
+          P.body[0].second += 1;
       }
     }
     // 检查是否撞墙
     else{
       if (last command == "w")
-        playerY -= 1;
+        P.body[0].second -= 1;
       if (last command == "d")
-        playerX += 1;
+        P.body[0].first += 1;
       if (last command == "s")
-        playerY += 1;
+        P.body[0].second += 1;
       if (last command == "a")
-        playerX -= 1;
+        P.body[0].first -= 1;
     }
-    if (map[playerY][playerX] == '#'){
+    if (map[P.body[0].second][P.body[0].first] == '#'){
       // 撞墙，游戏结束
         endwin();
         std::cout << "Game Over!" << std::endl;
         break;
         exit(0);
       }
-    if (map[playerY][playerX] == "P"){
+    if (map[P.body[0].second][P.body[0].first] == "P"){
       cout << "Game Over!" << endl;
       break;
       }
   // 更新地图
-    map[playerY - dy][playerX - dx] = '.';
-    map[playerY][playerX] = 'P';
+    map[P.body[0].second - dy][P.body[0].first] = '.';
+    map[P.body[0].second][P.body[0].first] = 'P';
     lastcommand = command;
   }
 }
