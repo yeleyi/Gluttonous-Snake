@@ -2,7 +2,7 @@
 #define PLAYER_H
 
 #include <vector>
-#include "map.hpp"
+#include "map.h"
 #include <string>
 
 using namespace std;
