@@ -3,9 +3,8 @@
 
 using namespace std;
 
-void movePlayer(int width, int height, Player &P, std::string **map, string command, string lastcommand){
+void movePlayer(int width, int height, Player &P, std::string **map, int &round, string &command, string &lastcommand){
   //更新玩家位置
-  string command, lastcommand;
   int round = 0;
   while (true){
     std::string command = getch();
