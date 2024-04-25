@@ -1,4 +1,4 @@
-#include "movePlayer.hpp"
+#include "movePlayer.h"
 #include <iostream>
 
 void movePlayer(int width, int height, Player &P, std::string **map){
