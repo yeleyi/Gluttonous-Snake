@@ -3,6 +3,7 @@
 #include "map.h"
 #include "player.h"
 #include <ncurses.h>
+#include <conio.h>
 #include <string>
 
 using namespace std;
