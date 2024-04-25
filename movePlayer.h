@@ -91,7 +91,6 @@ void movePlayer(int width, int height, const Player &P){
       break;
       }
 
-    //当P走到B上的时候调用extendPlayerLength这个函数。
     
   // 更新地图
     map[P.body[0].second - dy][P.body[0].first] = '.';
