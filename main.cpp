@@ -50,7 +50,7 @@ int main(){
     std::this_thread::sleep_for(std::chrono::milliseconds(200));
 
     // 移动玩家
-    movePlayer(width, height, P, map, command, lastcommand, round);
+    movePlayer(width, height, P, map, round, command, lastcommand);
 
     // 检查地图上是否有bean
     if (beansCount < 1) {
