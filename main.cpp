@@ -3,11 +3,11 @@
 #include <thread>
 #include <chrono>
 #include <ncurses.h>
-#include "map.h"
-#include "movePlayer.h"
-#include "renderMap.h"
-#include "randomBean.h"
-#include "player.h"
+#include "map.hpp"
+#include "movePlayer.hpp"
+#include "renderMap.hpp"
+#include "randomBeam.hpp"
+#include "player.hpp"
 using namespace std;
 
 int main(){
@@ -27,9 +27,10 @@ int main(){
     else
       continue;
   }
-  string ** map;
-  string command, lastcommand;
-  int round;
+    // 初始化地图数组
+    string **map = new string *[width + 2];
+    for (int i = 0; i < width + 2; i++)
+        map[i] = new string[height + 2];
   Player P; //创建一个Player P
   P.body.push_back(make_pair(width/2, height/2));
   mapf(width, height, map);
@@ -39,15 +40,15 @@ int main(){
   cbreak(); // 禁用行缓冲（让按键立即生效）
   noecho(); // 关闭回显
 
-  renderMap(); // 初始渲染地图
+  renderMap(width, height, map); // 初始渲染地图
 
   //游戏循环
   while (true){
     // 每个循环休眠一段时间，模拟游戏速度
-    std::this_thread::sleep_for(std::chrono:milliseconds(200));
+    std::this_thread::sleep_for(std::chrono::milliseconds(200));
 
     // 移动玩家
-    movePlayer(width, height, P, command, lastcommand, round);
+    movePlayer(width, height, P, map);
 
     // 检查地图上是否有bean
     if (beansCount < 1) {
@@ -56,12 +57,12 @@ int main(){
     }
 
     // 检查是否碰撞B
-    if (map[P.body[0].first][P.body[0].second] == 'B'){
+    if (map[P.body[0].first][P.body[0].second] == "B"){
       beansCount--;
-      extendPlayerLength();
+      extendPlayerLength(P);
     }
     
-    renderMap(); // 更新并重新渲染地图
+    renderMap(width, height, map); // 更新并重新渲染地图
   }
   
   
