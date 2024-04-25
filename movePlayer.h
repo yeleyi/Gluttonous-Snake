@@ -24,7 +24,7 @@ int dy=-1; //初始向上移动
 
 void movePlayer(int width, int height, const Player &P){
   //更新玩家位置
-  string command, lastcommand;
+  string command, last command;
   int round = 0;
   while true{
     if (cin >> command){
@@ -69,6 +69,7 @@ void movePlayer(int width, int height, const Player &P){
         else if (command == "s")
           P.body[0].second += 1;
       }
+      last command = command;
     }
     else{
       round = 0;
