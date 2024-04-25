@@ -8,7 +8,7 @@ void map(int width, int height){
     map[i] = new string [height + 2];
   for (int i = 0; i < width + 2; i++){
     for (int j = 0; j < height + 2; j++){
-      if (i = 0 || i = width + 1 || j = 0 || j = height + 1)
+      if (i == 0 || i == width + 1 || j == 0 || j == height + 1)
         map[width][height] = "#";
       else
         map[width][height] = ".";
