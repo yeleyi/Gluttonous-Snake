@@ -1,6 +1,8 @@
 #include "player.h"
 
 void extendPlayerLength(Player &P) {
+  string command, lastcommand;
+  int round = 0;
   P.body.push_back(P.body.back());
   for (int i = 1; i < P.body.size(); i++)
     P.body[i] = P.body[i - 1];
