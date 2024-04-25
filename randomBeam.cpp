@@ -1,4 +1,4 @@
-#include "randomBeam.hpp"
+#include "randomBeam.h"
 
 int randomInt(int min, int max){
   return min + rand() % (max -min + 1);
