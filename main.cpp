@@ -45,8 +45,8 @@ int main(){
     // 移动玩家
     movePlayer(width, height, playerX, playerY);
 
-    // 检查bean是否少于3个
-    if (beansCount < 3) {
+    // 检查地图上是否有bean
+    if (beansCount < 1) {
       generateBean(width, height, playerX, playerY, map);
       beansCount++;
     }
