@@ -28,8 +28,8 @@ int main(){
       continue;
   }
     // 初始化地图数组
-  string command, lastcommand;
-  int round;
+  string command = "0", lastcommand = "0";
+  int round = 0;
   string **map = new string *[width + 2];
   for (int i = 0; i < width + 2; i++)
         map[i] = new string[height + 2];
