@@ -11,7 +11,7 @@ Enjoy our game!
 
 
 ## ** Non-standard C/C++ libraries **
-
+We use <ncurses.h> so that the program can detect input while the game is processing. The code cbreak() from ncurses.h allows input to validate immediately without pressing enter.
 
 
 ## ** Compilation and execution instructions **
