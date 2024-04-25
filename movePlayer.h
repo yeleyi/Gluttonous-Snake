@@ -90,6 +90,9 @@ void movePlayer(int width, int height, const Player &P){
       cout << "Game Over!" << endl;
       break;
       }
+
+    //当P走到B上的时候调用extendPlayerLength这个函数。
+    
   // 更新地图
     map[P.body[0].second - dy][P.body[0].first] = '.';
     map[P.body[0].second][P.body[0].first] = 'P';
