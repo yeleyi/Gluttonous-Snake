@@ -29,6 +29,7 @@ int main(){
   }
   string ** map;
   string command, lastcommand;
+  int round;
   Player P; //创建一个Player P
   P.body.push_back(make_pair(width/2, height/2));
   mapf(width, height, map);
@@ -46,7 +47,7 @@ int main(){
     std::this_thread::sleep_for(std::chrono:milliseconds(200));
 
     // 移动玩家
-    movePlayer(width, height, P, command, lastcommand);
+    movePlayer(width, height, P, command, lastcommand, round);
 
     // 检查地图上是否有bean
     if (beansCount < 1) {
