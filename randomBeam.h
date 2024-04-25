@@ -5,8 +5,6 @@
 #include <ctime>
 #include "player.h"
 
-int beansCount = 0;
-
 // 随机生成数字的函数
 int randomInt(int min, int max){
   return min + rand() % (max -min + 1);
