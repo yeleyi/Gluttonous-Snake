@@ -18,7 +18,7 @@ using namespace std;
 // int playerX = width/2;
 // int playerY = height/2;
 
-void movePlayer(int width, int height, Player &P, string command, string lastcommand){
+void movePlayer(int width, int height, Player &P, string &command, string &lastcommand, int &round){
   //更新玩家位置
   string command, lastcommand;
   int round = 0;
