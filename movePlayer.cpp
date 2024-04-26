@@ -1,8 +1,7 @@
 #include "movePlayer.h"
-#include <iostream>
-
-void movePlayer(int width, int height, Player &P, char **map, char command, char lastcommand, int round,int ch, int &dirX, int &dirY){
-      if (ch != ERR) {
+  
+void movePlayer(int width, int height, Player &P, char **map,int ch, int &dirX, int &dirY, int &beansCount){
+    if (ch != ERR) {
             switch (ch) {
                 case 'w':
                     // 上移逻辑
@@ -41,21 +40,5 @@ void movePlayer(int width, int height, Player &P, char **map, char command, char
             }
             flushinp();
         }
-    P.body[0].first += dirX;
-    P.body[0].second += dirY;
-    if (map[P.body[0].second][P.body[0].first] == '#'){
-      // 撞墙，游戏结束
-        endwin();
-        std::cout << "Game Over!" << std::endl;
-        exit(0);
-    }
-   /* if (map[P.body[0].first][P.body[0].second] == 'P'){
-      //撞到自身，游戏结束
-      cout << "Game Over!" << endl;
-        exit(0);
-      }*/
-    map[P.body[0].second][P.body[0].first] = 'P';
-    map[P.body[0].second-dirY][P.body[0].first-dirX] = '.';
-    lastcommand = command;
 }
 
