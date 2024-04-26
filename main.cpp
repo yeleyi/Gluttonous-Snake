@@ -27,8 +27,7 @@ int main(){
     else
       continue;
   }
-    char command, lastcommand;
-    int round=0;
+  
     int dirX = 0;
     int dirY = -1;
     // 初始化地图数组
@@ -37,7 +36,6 @@ int main(){
         map[i] = new char[height + 2];
   Player P; //创建一个Player P
   P.body.push_back(make_pair(width/2, height/2));
-  cout << P.body[0].first << endl << P.body[0].second << endl;
   mapf(width, height, map);
   int beansCount = 0;
   initscr(); // 初始化 ncurses
@@ -46,29 +44,46 @@ int main(){
 
   nodelay(stdscr, true);
 
-  renderMap(width, height, map); // 初始渲染地图
+  renderMap(width, height, map, P); // 初始渲染地图
 
   //游戏循环
   while (true){
     // 每个循环休眠一段时间，模拟游戏速度
     std::this_thread::sleep_for(std::chrono::milliseconds(200));
     // 移动玩家
+
     int ch = getch();
-    movePlayer(width, height, P, map, command, lastcommand, round, ch, dirX, dirY);
+    movePlayer(width, height, P, map, ch, dirX, dirY, beansCount);
+    P.body[0].first += dirX;
+    P.body[0].second += dirY;
+    if (map[P.body[0].second][P.body[0].first] == '#'){
+      // 撞墙，游戏结束
+        endwin();
+        std::cout << "Game Over!" << std::endl;
+        exit(0);
+    }
+
+    // 检查是否碰撞B
+    if (map[P.body[0].second][P.body[0].first] == 'B'){
+            beansCount--;
+            auto newCoord = extendPlayerLength(P,map,width, height, dirX, dirY);
+            map[newCoord.second][newCoord.first]= 'T';
+    }
+   /* if (map[P.body[0].first][P.body[0].second] == 'P'){
+      //撞到自身，游戏结束
+      cout << "Game Over!" << endl;
+        exit(0);
+      }*/
+    map[P.body[0].second][P.body[0].first] = 'P';
+    map[P.body[0].second-dirY][P.body[0].first-dirX] = '.';
 
     // 检查地图上是否有bean
-    if (beansCount < 1) {
+    if (beansCount == 0) {
       generateBean(width, height, P, map);
       beansCount++;
     }
 
-    // 检查是否碰撞B
-    if (map[P.body[0].first][P.body[0].second] == 'B'){
-      beansCount--;
-      extendPlayerLength(P);
-    }
-
-    renderMap(width, height, map); // 更新并重新渲染地图
+    renderMap(width, height, map, P); // 更新并重新渲染地图
   }
 
 
@@ -79,3 +94,5 @@ int main(){
   endwin();
   return 0;
 }
+                                                                                                                                                                                                 96,1          Bot
+
