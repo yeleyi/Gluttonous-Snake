@@ -4,7 +4,6 @@
 #include "player.h"
 #include <iostream>
 #include <ncurses.h>
-#include <string>
 
 using namespace std;
 
