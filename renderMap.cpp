@@ -1,7 +1,6 @@
 #include "renderMap.h"
-#include <iomanip>
-
-void renderMap(int width, int height, char **map){
+  
+void renderMap(int width, int height, char **map, Player &P){
   clear();
   for (int y=0; y<height; ++y){
     for (int x=0; x<width; ++x){
@@ -9,6 +8,11 @@ void renderMap(int width, int height, char **map){
     }
     printw("\n");
   }
+
+  for (int i=1; i<P.body.size(); ++i){
+        map[P.body[i].second][P.body[i].first] = 'T';
+  }
+
   refresh(); // 刷新屏幕
 }
 
