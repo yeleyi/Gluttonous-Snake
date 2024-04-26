@@ -3,7 +3,6 @@
 
 #include <vector>
 #include "map.h"
-#include <string>
 #include <ncurses.h>
 #include <iostream>
 
