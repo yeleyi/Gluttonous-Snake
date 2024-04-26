@@ -1,7 +1,12 @@
 #include "randomBeam.h"
   
 int randomInt(int min, int max){
-  return min + rand() % (max -min + 1);
+        static bool initialized = false;
+        if (!initialized){
+                srand(time(NULL));
+                initialized = true;
+        }
+        return min + rand() % (max -min + 1);
 }
 // 随机在地图上生成豆子的函数
 void generateBean(int width, int height, const Player &P, char **map) {
