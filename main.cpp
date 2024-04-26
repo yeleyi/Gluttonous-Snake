@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include <thread>
 #include <chrono>
 #include <ncurses.h>
