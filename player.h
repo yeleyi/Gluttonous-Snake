@@ -4,6 +4,8 @@
 #include <vector>
 #include "map.h"
 #include <string>
+#include <ncurses.h>
+#include <iostream>
 
 using namespace std;
 
@@ -12,6 +14,6 @@ struct Player{
 };
 
 // 当玩家触碰豆子时调用，扩展玩家长度
-void extendPlayerLength(Player &P);
+pair<int, int> extendPlayerLength(Player &P, char **map,int width, int height, int dirX, int dirY);
 
 #endif
