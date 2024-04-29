@@ -45,7 +45,7 @@ int main(){
 
   renderMap(width, height, map, P); // 初始渲染地图
 
-  int score;
+  int score = 0;
 
   //游戏循环
   while (true){
