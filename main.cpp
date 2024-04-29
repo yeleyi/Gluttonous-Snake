@@ -26,7 +26,7 @@ int main(){
     else
       continue;
   }
-  
+
     int dirX = 0;
     int dirY = -1;
     // 初始化地图数组
@@ -46,17 +46,17 @@ int main(){
   renderMap(width, height, map, P); // 初始渲染地图
 
   int score = 0;
-  int sleep = 500;
+ // int sleep = 1000;
 
   //游戏循环
   while (true){
     // 每个循环休眠一段时间，模拟游戏速度
-    std::this_thread::sleep_for(std::chrono::milliseconds(200));
+    std::this_thread::sleep_for(std::chrono::milliseconds(500 - score*30));
     // 移动玩家
 
     int ch = getch();
-    std::this_thread::sleep_for(std::chrono::milliseconds(sleep));
-    movePlayer(width, height, P, map, ch, dirX, dirY, beansCount, sleep);
+    movePlayer(width, height, P, map, ch, dirX, dirY, beansCount/* sleep*/);
+    //std::this_thread::sleep_for(std::chrono::milliseconds(sleep));
     P.body[0].first += dirX;
     P.body[0].second += dirY;
     if (map[P.body[0].second][P.body[0].first] == '#'){
@@ -71,12 +71,12 @@ int main(){
     if (map[P.body[0].second][P.body[0].first] == 'B'){
       beansCount--;
       score = score + 1;
-      if (sleep >= 0){
+    /*  if (sleep >= 0){
         sleep = sleep - 20;
       }
       else{
         sleep = sleep;
-      }
+      }*/
       /*auto newCoord = extendPlayerLength(P,map,width, height, dirX, dirY);
       map[newCoord.second][newCoord.first]= 'T';*/
     }
@@ -106,5 +106,6 @@ int main(){
   endwin();
   return 0;
 }
+
                                                                                                                                                                                                  96,1          Bot
 
