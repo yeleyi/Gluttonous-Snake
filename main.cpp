@@ -56,6 +56,7 @@ int main(){
 
     int ch = getch();
     movePlayer(width, height, P, map, ch, dirX, dirY, beansCount, sleep);
+    std::this_thread::sleep_for(std::chrono::milliseconds(sleep));
     P.body[0].first += dirX;
     P.body[0].second += dirY;
     if (map[P.body[0].second][P.body[0].first] == '#'){
