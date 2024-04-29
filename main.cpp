@@ -55,7 +55,7 @@ int main(){
     // 移动玩家
 
     int ch = getch();
-    movePlayer(width, height, P, map, ch, dirX, dirY, beansCount);
+    movePlayer(width, height, P, map, ch, dirX, dirY, beansCount, sleep);
     P.body[0].first += dirX;
     P.body[0].second += dirY;
     if (map[P.body[0].second][P.body[0].first] == '#'){
