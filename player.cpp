@@ -42,7 +42,7 @@ pair<int, int> extendPlayerLength(Player &P, char **map, int width, int height, 
             P.body[0].first = P.body[1].first + 1;
         }
     }*/
-    // 获取玩家当前的位置和移动方向
+    /*获取玩家当前的位置和移动方向
         int currentX = P.body.back().first;
         int currentY = P.body.back().second;
 
@@ -63,5 +63,6 @@ pair<int, int> extendPlayerLength(Player &P, char **map, int width, int height, 
                         }
                 }
         }
-        return make_pair(currentX, currentY);
+        return make_pair(currentX, currentY);*/
+  
 }
