@@ -7,6 +7,6 @@
 
 using namespace std;
 
-void movePlayer(int width, int height, Player &P, char **map, int ch, int &dirX, int &dirY, int &beansCount);
+void movePlayer(int width, int height, Player &P, char **map, int ch, int &dirX, int &dirY, int &beansCount, int &sleep);
 
 #endif
