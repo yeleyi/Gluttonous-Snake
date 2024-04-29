@@ -13,7 +13,7 @@ void movePlayer(int width, int height, Player &P, char **map,int ch, int &dirX, 
                     if (dirX!=0){
                         dirX=0;
                         dirY=-1;
-                        std::this_thread::sleep_for(std::chrono::milliseconds(sleep));
+                        
                     }
                     
                     break;
@@ -23,7 +23,6 @@ void movePlayer(int width, int height, Player &P, char **map,int ch, int &dirX, 
                     if (dirX!=0){
                         dirX=0;
                         dirY=1;
-                        std::this_thread::sleep_for(std::chrono::milliseconds(sleep));
                     }
                 
                     break;
@@ -33,7 +32,6 @@ void movePlayer(int width, int height, Player &P, char **map,int ch, int &dirX, 
                     if (dirY!=0){
                         dirX=-1;
                         dirY=0;
-                        std::this_thread::sleep_for(std::chrono::milliseconds(sleep));
                     }
                     break;
                 case 'd':
@@ -42,11 +40,9 @@ void movePlayer(int width, int height, Player &P, char **map,int ch, int &dirX, 
                     if (dirY!=0){
                         dirX=1;
                         dirY=0;
-                        std::this_thread::sleep_for(std::chrono::milliseconds(sleep));
                     }
                     break;
                 default:
-                    std::this_thread::sleep_for(std::chrono::milliseconds(sleep));
                     break;
             }
             flushinp();
