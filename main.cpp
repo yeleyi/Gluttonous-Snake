@@ -51,7 +51,7 @@ int main(){
   //游戏循环
   while (true){
     // 每个循环休眠一段时间，模拟游戏速度
-    std::this_thread::sleep_for(std::chrono::milliseconds(200));
+    std::this_thread::sleep_for(std::chrono::milliseconds(sleep));
     // 移动玩家
 
     int ch = getch();
@@ -70,8 +70,12 @@ int main(){
     if (map[P.body[0].second][P.body[0].first] == 'B'){
       beansCount--;
       score = score + 1;
-      sleep_for(milliseconds(sleep));
-      sleep = sleep - 20;
+      if (sleep >= 0){
+        sleep = sleep - 20;
+      }
+      else{
+        sleep = sleep;
+      }
       /*auto newCoord = extendPlayerLength(P,map,width, height, dirX, dirY);
       map[newCoord.second][newCoord.first]= 'T';*/
     }
