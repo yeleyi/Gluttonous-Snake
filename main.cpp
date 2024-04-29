@@ -45,6 +45,8 @@ int main(){
 
   renderMap(width, height, map, P); // 初始渲染地图
 
+  int score;
+
   //游戏循环
   while (true){
     // 每个循环休眠一段时间，模拟游戏速度
@@ -64,13 +66,15 @@ int main(){
 
     // 检查是否碰撞B
     if (map[P.body[0].second][P.body[0].first] == 'B'){
-            beansCount--;
-            auto newCoord = extendPlayerLength(P,map,width, height, dirX, dirY);
-            map[newCoord.second][newCoord.first]= 'T';
+      beansCount--;
+      score = score + 1;
+      auto newCoord = extendPlayerLength(P,map,width, height, dirX, dirY);
+      map[newCoord.second][newCoord.first]= 'T';
     }
    /* if (map[P.body[0].first][P.body[0].second] == 'P'){
       //撞到自身，游戏结束
       cout << "Game Over!" << endl;
+      cout << "Your score is " << score << endl;
         exit(0);
       }*/
     map[P.body[0].second][P.body[0].first] = 'P';
