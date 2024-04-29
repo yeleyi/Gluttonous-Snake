@@ -1,6 +1,6 @@
 #include "player.h"
   
-pair<int, int> extendPlayerLength(Player &P, char **map, int width, int height, int dirX, int dirY) {
+/*pair<int, int> extendPlayerLength(Player &P, char **map, int width, int height, int dirX, int dirY) {
     /*P.body.push_back(P.body.back());
     string command, lastcommand;
     int round = 0;
@@ -66,3 +66,4 @@ pair<int, int> extendPlayerLength(Player &P, char **map, int width, int height, 
         return make_pair(currentX, currentY);*/
   
 }
+*/
