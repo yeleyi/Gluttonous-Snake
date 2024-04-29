@@ -61,6 +61,7 @@ int main(){
       // 撞墙，游戏结束
         endwin();
         std::cout << "Game Over!" << std::endl;
+        cout << "Your score is " << score << "." << endl;
         exit(0);
     }
 
