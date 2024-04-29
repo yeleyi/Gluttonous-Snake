@@ -1,6 +1,10 @@
 #include "movePlayer.h"
+#include <thread>
+#include <chrono>
+
+using namespace std;
   
-void movePlayer(int width, int height, Player &P, char **map,int ch, int &dirX, int &dirY, int &beansCount){
+void movePlayer(int width, int height, Player &P, char **map,int ch, int &dirX, int &dirY, int &beansCount, int &sleep){
     if (ch != ERR) {
             switch (ch) {
                 case 'w':
@@ -9,7 +13,9 @@ void movePlayer(int width, int height, Player &P, char **map,int ch, int &dirX, 
                     if (dirX!=0){
                         dirX=0;
                         dirY=-1;
+                        sleep_for(milliseconds(sleep));
                     }
+                    
                     break;
                 case 's':
                     // 下移逻辑
@@ -17,7 +23,9 @@ void movePlayer(int width, int height, Player &P, char **map,int ch, int &dirX, 
                     if (dirX!=0){
                         dirX=0;
                         dirY=1;
+                        sleep_for(milliseconds(sleep));
                     }
+                
                     break;
                 case 'a':
                     // 左移逻辑
@@ -25,6 +33,7 @@ void movePlayer(int width, int height, Player &P, char **map,int ch, int &dirX, 
                     if (dirY!=0){
                         dirX=-1;
                         dirY=0;
+                        sleep_for(milliseconds(sleep));
                     }
                     break;
                 case 'd':
@@ -33,9 +42,11 @@ void movePlayer(int width, int height, Player &P, char **map,int ch, int &dirX, 
                     if (dirY!=0){
                         dirX=1;
                         dirY=0;
+                        sleep_for(milliseconds(sleep));
                     }
                     break;
                 default:
+                    sleep_for(milliseconds(sleep));
                     break;
             }
             flushinp();
