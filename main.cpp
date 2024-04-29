@@ -46,13 +46,15 @@ int main(){
   renderMap(width, height, map, P); // 初始渲染地图
 
   int score = 0;
- // int sleep = 1000;
+  int sleep = 520;
 
   //游戏循环
   while (true){
     // 每个循环休眠一段时间，模拟游戏速度
-    if ()
-    std::this_thread::sleep_for(std::chrono::milliseconds(500 - score*20));
+    if (score % 5 == 0){
+      sleep = sleep - 20;
+    }
+    std::this_thread::sleep_for(std::chrono::milliseconds(sleep));
     // 移动玩家
 
     int ch = getch();
