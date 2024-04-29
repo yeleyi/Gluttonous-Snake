@@ -46,6 +46,7 @@ int main(){
   renderMap(width, height, map, P); // 初始渲染地图
 
   int score = 0;
+  int sleep = 1000;
 
   //游戏循环
   while (true){
@@ -69,6 +70,8 @@ int main(){
     if (map[P.body[0].second][P.body[0].first] == 'B'){
       beansCount--;
       score = score + 1;
+      sleep_for(milliseconds(sleep));
+      sleep = sleep - 20;
       /*auto newCoord = extendPlayerLength(P,map,width, height, dirX, dirY);
       map[newCoord.second][newCoord.first]= 'T';*/
     }
