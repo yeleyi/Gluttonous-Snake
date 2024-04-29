@@ -69,8 +69,8 @@ int main(){
     if (map[P.body[0].second][P.body[0].first] == 'B'){
       beansCount--;
       score = score + 1;
-      auto newCoord = extendPlayerLength(P,map,width, height, dirX, dirY);
-      map[newCoord.second][newCoord.first]= 'T';
+      /*auto newCoord = extendPlayerLength(P,map,width, height, dirX, dirY);
+      map[newCoord.second][newCoord.first]= 'T';*/
     }
    /* if (map[P.body[0].first][P.body[0].second] == 'P'){
       //撞到自身，游戏结束
