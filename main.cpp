@@ -51,7 +51,7 @@ int main(){
   //游戏循环
   while (true){
     // 每个循环休眠一段时间，模拟游戏速度
-    std::this_thread::sleep_for(std::chrono::milliseconds(sleep));
+    std::this_thread::sleep_for(std::chrono::milliseconds(200));
     // 移动玩家
 
     int ch = getch();
