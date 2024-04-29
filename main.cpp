@@ -46,7 +46,7 @@ int main(){
   renderMap(width, height, map, P); // 初始渲染地图
 
   int score = 0;
-  int sleep = 1000;
+  int sleep = 500;
 
   //游戏循环
   while (true){
@@ -55,8 +55,8 @@ int main(){
     // 移动玩家
 
     int ch = getch();
-    movePlayer(width, height, P, map, ch, dirX, dirY, beansCount, sleep);
     std::this_thread::sleep_for(std::chrono::milliseconds(sleep));
+    movePlayer(width, height, P, map, ch, dirX, dirY, beansCount, sleep);
     P.body[0].first += dirX;
     P.body[0].second += dirY;
     if (map[P.body[0].second][P.body[0].first] == '#'){
