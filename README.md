@@ -7,7 +7,10 @@ As the snake grows, the snake moves faster and it becomes more difficult to avoi
 
 Enjoy our game!
 ## ** Features **
-
+1. You decide your map. we use dynamic arrays to invite players setting the map size.
+2. We use several files recalling for seperate compilation.
+3. We generates random beans location.
+4. 
 
 
 ## ** Non-standard C/C++ libraries **
@@ -15,7 +18,7 @@ We use <ncurses.h> so that the program can detect input while the game is proces
 
 
 ## ** Compilation and execution instructions **
-
+Please use ios devices running our game.
 
 
 
