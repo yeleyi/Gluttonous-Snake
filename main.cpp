@@ -128,6 +128,3 @@ int main(){
   endwin();
   return 0;
 }
-
-                                                                                                                                                                                                 96,1          Bot
-
