@@ -27,11 +27,11 @@ int main(){
       continue;
   }
 
-    int dirX = 0;
-    int dirY = -1;
-    // 初始化地图数组
-    char **map = new char *[width + 2];
-    for (int i = 0; i < width + 2; i++)
+  int dirX = 0;
+  int dirY = -1;
+  // 初始化地图数组
+  char **map = new char *[width + 2];
+  for (int i = 0; i < width + 2; i++)
         map[i] = new char[height + 2];
   Player P; //创建一个Player P
   P.body.push_back(make_pair(width/2, height/2));
@@ -64,10 +64,10 @@ int main(){
     P.body[0].second += dirY;
     if (map[P.body[0].second][P.body[0].first] == '#'){
       // 撞墙，游戏结束
-        endwin();
-        std::cout << "Game Over!" << std::endl;
-        cout << "Your score is " << score << "." << endl;
-        exit(0);
+      endwin();
+      std::cout << "Game Over!" << std::endl;
+      cout << "Your score is " << score << "." << endl;
+      exit(0);
     }
 
     // 检查是否碰撞B
