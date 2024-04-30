@@ -46,17 +46,48 @@ int main(){
   renderMap(width, height, map, P); // 初始渲染地图
 
   int score = 0;
-  int sleep = 520;
+  int speed = 550-width-height;
+  int level = 0;
 
   //游戏循环
   while (true){
     // 每个循环休眠一段时间，模拟游戏速度
-    if (score % 5 == 0){
-      sleep = sleep - 20;
+    if (score == 3){
+        level =1;
     }
-    std::this_thread::sleep_for(std::chrono::milliseconds(sleep));
-    // 移动玩家
+    if (score == 6){
+        level =2;
+    }
+    if (score == 9){
+        level =3;
+    }
+    if (score == 12){
+        level =4;
+    }
+    if (score == 15){
+        level =5;
+    }
+    if (score == 18){
+        level = 6;
+    }
+    if (score == 21){
+        level = 7;
+    }
+    if (score == 24){
+        level = 8;
+    }
+    if (score == 27){
+        level = 9;
+    }
+    if (score == 30){
+        endwin();
+        std::cout << "You Win!" << std::endl;
+        cout << "Your score is " << score << "." << endl;
+        exit(0);
+    }
 
+    std::this_thread::sleep_for(std::chrono::milliseconds(speed-level*(speed/11)));
+    // 移动玩家
     int ch = getch();
     movePlayer(width, height, P, map, ch, dirX, dirY, beansCount/* sleep*/);
     //std::this_thread::sleep_for(std::chrono::milliseconds(sleep));
