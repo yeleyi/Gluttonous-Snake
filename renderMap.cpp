@@ -13,6 +13,6 @@ void renderMap(int width, int height, char **map, Player &P){
     map[P.body[i].second][P.body[i].first] = 'T';
   }
 
-  refresh(); // 刷新屏幕
+  refresh();
 }
 
