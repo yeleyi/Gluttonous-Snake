@@ -50,7 +50,7 @@ int main(){
   int speed = 550-width-height;
   int level = 0;
 
-  //游戏循环
+
   while (true){
 
     if (score == 3){
@@ -91,7 +91,7 @@ int main(){
 
     int ch = getch();
     movePlayer(width, height, P, map, ch, dirX, dirY, beansCount);
-    //std::this_thread::sleep_for(std::chrono::milliseconds(sleep));
+
     P.body[0].first += dirX;
     P.body[0].second += dirY;
     if (map[P.body[0].second][P.body[0].first] == '#'){
