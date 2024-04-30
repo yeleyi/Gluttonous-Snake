@@ -4,6 +4,8 @@
 
 using namespace std;
 
+// detect player input and change direction of player P.
+
 void movePlayer(int width, int height, Player &P, char **map,int ch, int &dirX, int &dirY, int &beansCount){
     if (ch != ERR) {
         switch (ch) {
