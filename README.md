@@ -10,12 +10,12 @@ Enjoy our game!
 1. You decide your map. We use dynamic arrays to invite players to set the map size.
 2. We use several files recalling for separate compilation.
 3. We generate random beans location.
-4. 
+4. The program can detect input without pressing enter. This is done by the code getch();
+5. The game can continue processing without waiting for the player's input. This is done by the code nodelay() from the library <ncurses.h>.
 
 
 ## ** Non-standard C/C++ libraries **
-We use <ncurses.h> so that the program can detect input while the game is processing. The code cbreak() from ncurses.h allows input to validate immediately without pressing enter.
-
+We use <ncurses.h> so that the program can detect input while the game is processing without waiting for the player's input. The code nodelay() from ncurses.h allows the game to continue without waiting for the player's input.
 
 ## ** Compilation and execution instructions **
 Please use ios devices running our game.
