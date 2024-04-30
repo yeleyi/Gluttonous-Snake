@@ -24,7 +24,6 @@ int main(){
     cout << line << endl;
   }
   fin.close();
-  cout << "How large do you want your map to be?" << endl;
   cin >> width;+
   height = width;
   while (width < 20 || height < 20){
