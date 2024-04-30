@@ -1,5 +1,6 @@
 #include "renderMap.h"
-  
+
+// render Map
 void renderMap(int width, int height, char **map, Player &P){
   clear();
   for (int y=0; y<height; ++y){
