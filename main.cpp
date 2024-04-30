@@ -32,7 +32,7 @@ int main(){
   // 初始化地图数组
   char **map = new char *[width + 2];
   for (int i = 0; i < width + 2; i++)
-        map[i] = new char[height + 2];
+    map[i] = new char[height + 2];
   Player P; //创建一个Player P
   P.body.push_back(make_pair(width/2, height/2));
   mapf(width, height, map);
