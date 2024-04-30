@@ -7,12 +7,25 @@
 #include "renderMap.h"
 #include "randomBeam.h"
 #include "player.h"
+#include <fstream>
+#include <cstdlib>
 using namespace std;
 
 int main(){
   int width, height;
+  ifstream fin;
+  fin.open("asksize.txt");
+  if (fin.fail()){
+    cout << "Error in file opening!" << endl;
+    exit(1);
+  }
+  string line;
+  while(getline(fin, line)){
+    cout << line << endl;
+  }
+  fin.close();
   cout << "How large do you want your map to be?" << endl;
-  cin >> width;
+  cin >> width;+
   height = width;
   while (width < 20 || height < 20){
     cout << "The map is too small. Please input again." << endl;
