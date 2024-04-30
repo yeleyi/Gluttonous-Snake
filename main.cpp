@@ -11,16 +11,13 @@ using namespace std;
 
 int main(){
   int width, height;
-  cout << "How wide do you want your map to be?" << endl;
+  cout << "How large do you want your map to be?" << endl;
   cin >> width;
-  cout << "How high do you want your map to be?" << endl;
-  cin >> height;
+  height = width;
   while (width < 20 || height < 20){
     cout << "The map is too small. Please input again." << endl;
-    cout << "How wide do you want your map to be?" << endl;
-    cin >> width;
-    cout << "How high do you want your map to be?" << endl;
-    cin >> height;
+    cout << "How large do you want your map to be?" << endl;
+  cin >> width;
     if (width >= 20 && height >= 20)
       break;
     else
