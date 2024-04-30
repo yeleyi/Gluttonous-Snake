@@ -1,5 +1,5 @@
 # ** COMP2113 Group Project: Gluttonous-Snake **
-## ** Team members (Alphabetical Order) **
+## ** GROUP 86 Team members (Alphabetical Order) **
 ### Jian Yachun & Ye Leyi
 ## ** Game description **
 This is a simple version of classic Snake game. In Gluttonous-Snake, you control a snake-like creature (representing by P) within a small area by w, a, s, d on your keyboard. The goal is to get the snake to eat beans (representing by B) and earn higher scores. The snake will move in a straight line until you tell it to turn. To avoid obstacles, make sure to carefully plan your movements. 
