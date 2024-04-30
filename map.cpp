@@ -6,7 +6,7 @@ void mapf(int width, int height, char ** map){
         }
     }
 
-    // 设置边界为 '#'
+
     for (int x = 0; x < width; ++x) {
         map[0][x] = '#';
         map[height - 1][x] = '#';
