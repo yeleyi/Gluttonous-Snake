@@ -12,6 +12,7 @@ Enjoy our game!
 3. We generate random beans location.
 4. The program can detect input without pressing enter. This is done by the code getch();
 5. The game can continue processing without waiting for the player's input. This is done by the code nodelay() from the library <ncurses.h>.
+6. Read from file asksize.txt and print contents in asksize.txt.
 
 
 ## ** Non-standard C/C++ libraries **
